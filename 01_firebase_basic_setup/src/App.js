@@ -45,9 +45,10 @@ function App() {
 
             {user.email && (
                 <div>
+                    <h3>Your Accounts</h3>
                     <h1>{user.displayName}</h1>
                     <p>{user.email}</p>
-                    <img src={user.photoURL} alt="" width="200" height="200" />
+                    <img src={user.photoURL} alt="" width="300" height="300" />
                 </div>
             )}
         </div>
