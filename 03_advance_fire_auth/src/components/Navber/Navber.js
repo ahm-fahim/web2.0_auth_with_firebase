@@ -1,11 +1,11 @@
 import React from "react";
 
-const Navbar = () => {
+const Navber = () => {
     return (
         <div className="text-2xl bg-white">
-            <h1>Navbar</h1>
+            <h1>Navber</h1>
         </div>
     );
 };
 
-export default Navbar;
+export default Navber;
