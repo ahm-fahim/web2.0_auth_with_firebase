@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/UserContext";
 
 const RegiForm = () => {
+    const { createUser } = useContext(AuthContext);
+
     const handleRegister = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -9,7 +12,16 @@ const RegiForm = () => {
         const email = form.email.value;
         const pass = form.password.value;
         console.log(name, email, pass);
+        createUser(email, pass)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
+
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
