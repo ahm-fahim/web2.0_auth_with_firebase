@@ -63,7 +63,7 @@ const RegiForm = () => {
                                 Register
                             </button>
                             <Link
-                                to="/register"
+                                to="/login"
                                 className="text-green-500 text-center mt-2 link link-hover hover:text-gray-600"
                             >
                                 Already have an account?

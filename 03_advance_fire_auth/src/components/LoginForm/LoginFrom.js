@@ -45,12 +45,12 @@ const LoginFrom = () => {
                                 required
                             />
                             <label className="label">
-                                <a
-                                    href="#"
+                                <Link
+                                    to="/register"
                                     className="label-text-alt link link-hover text-green-500"
                                 >
                                     Forgot password?
-                                </a>
+                                </Link>
                             </label>
                         </div>
                         <div className="form-control mt-6">
