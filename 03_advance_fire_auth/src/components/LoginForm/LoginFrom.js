@@ -57,6 +57,12 @@ const LoginFrom = () => {
                             <button type="submit" className="btn btn-success">
                                 Login
                             </button>
+                            <Link
+                                to="/register"
+                                className="text-green-500 text-center mt-2 link link-hover hover:text-gray-600"
+                            >
+                                Create an account?
+                            </Link>
                         </div>
                     </form>
                 </div>
