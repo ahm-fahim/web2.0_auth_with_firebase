@@ -5,6 +5,8 @@ import Error from "./Error";
 import Layout from "./layout/Layout";
 import LoginForm from "./components/LoginForm/LoginFrom";
 import RegiForm from "./components/RegiForm/RegiForm";
+import PrivateRoute from "./privateRoute/PrivateRoute";
+import Blog from "./pages/Blog";
 
 function App() {
     const router = createBrowserRouter([
@@ -24,6 +26,14 @@ function App() {
                 {
                     path: "/register",
                     element: <RegiForm />,
+                },
+                {
+                    path: "/blog",
+                    element: (
+                        <PrivateRoute>
+                            <Blog />
+                        </PrivateRoute>
+                    ),
                 },
             ],
         },

@@ -11,6 +11,7 @@ const Home = () => {
     return (
         <div>
             <h1 className="text-4xl">
+                <h1 className="text-4xl">HOME Page </h1>
                 {user?.email && <span>Welcome,{user.email} </span>}
                 <button onClick={handleLogout} className="btn btn-success">
                     Sign Out
