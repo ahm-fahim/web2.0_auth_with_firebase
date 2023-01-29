@@ -10,12 +10,12 @@ const LoginFrom = () => {
         const form = event.target;
         const email = form.email.value;
         const pass = form.password.value;
-        console.log(email, pass);
+
 
         loginUser(email, pass)
             .then((result) => {
                 const user = result.user;
-                console.log(user);
+                form.reset();
             })
             .catch((error) => {
                 console.log(error);

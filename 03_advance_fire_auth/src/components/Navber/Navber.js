@@ -9,7 +9,7 @@ const Navber = () => {
                     <div className="dropdown">
                         <label
                             tabIndex={0}
-                            className="btn btn-ghost btn-circle"
+                            className="btn btn-ghost btn-circle hover:bg-green-400"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -28,15 +28,15 @@ const Navber = () => {
                         </label>
                         <ul
                             tabIndex={0}
-                            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                            className="menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                         >
-                            <li>
+                            <li className="active:text-green-300">
                                 <Link to="/">Home</Link>
                             </li>
-                            <li>
+                            <li className="active:text-green-300">
                                 <Link to="/login">Login</Link>
                             </li>
-                            <li>
+                            <li className="active:text-green-300c">
                                 <Link to="/register">Register</Link>
                             </li>
                         </ul>
@@ -48,8 +48,15 @@ const Navber = () => {
                     </Link>
                 </div>
                 <div className="navbar-end">
-                    <Link to='/login' className="text-lg mx-1">Login</Link>
-                    <Link to="/register" className="btn btn-outline btn-success mx-1">Register</Link>
+                    <Link to="/login" className="text-lg mx-1">
+                        Login
+                    </Link>
+                    <Link
+                        to="/register"
+                        className="btn btn-outline btn-success mx-1"
+                    >
+                        Register
+                    </Link>
                 </div>
             </div>
         </div>

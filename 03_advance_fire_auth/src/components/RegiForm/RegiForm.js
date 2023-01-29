@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/UserContext";
 
 const RegiForm = () => {
     const { createUser } = useContext(AuthContext);
+    const [message, setMessage] = useState(false);
+    const [errormsg, setErrormsg] = useState(false);
 
     const handleRegister = (event) => {
         event.preventDefault();
@@ -15,10 +17,11 @@ const RegiForm = () => {
         createUser(email, pass)
             .then((result) => {
                 const user = result.user;
-                console.log(user);
+                setMessage(true);
+                form.reset();
             })
             .catch((error) => {
-                console.log(error);
+                setErrormsg(true, error);
             });
     };
 
@@ -34,6 +37,10 @@ const RegiForm = () => {
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleRegister} className="card-body">
+                        <p className="text-center text-md mb-3 text-green-400">
+                            {message && "Registration Completed Successfully!"}
+                            {errormsg && "Registration Failed Try Again!"}
+                        </p>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
