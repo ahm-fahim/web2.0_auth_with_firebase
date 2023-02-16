@@ -8,6 +8,8 @@ import Shop from "./Pages/Shop";
 import Home from "./Pages/Home";
 import Orders from "./Pages/Orders";
 import { ProCartLoader } from "./loaders/ProCartLoader";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
         path: "/orders",
         loader: ProCartLoader,
         element: <Orders />,
+    },
+    {
+        path: "/login",
+        element: <Login />,
+    },
+    {
+        path: "/register",
+        element: <Register />,
     },
 ]);
 

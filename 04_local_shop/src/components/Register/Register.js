@@ -1,14 +1,18 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
+import MainLayout from "../../layout/MainLayout";
 
 const Register = () => {
     return (
-        <div>
-            <h1>Register</h1>
-            <h1>I am relaxing now</h1>
-            <h2>Today I also be relaxing</h2>
-            <h3>Relaxing also today</h3>
-            <h4>Last day of relax</h4>
-        </div>
+        <MainLayout>
+            <form className="container w-50">
+                <input type="email" className="form-control m-2" placeholder="email" required/>
+                <input type="password" className="form-control m-2" placeholder="password" required />
+                <button className="btn btn-danger m-2">Register</button>
+                <hr />
+                <Link to="/login" className="text-danger">Already have an account?</Link>
+            </form>
+        </MainLayout>
     );
 };
 
