@@ -6,6 +6,7 @@ const Register = () => {
     return (
         <MainLayout>
             <form className="container w-50">
+                <h3 className="text-danger m-2">Register Now</h3>
                 <input type="email" className="form-control m-2" placeholder="email" required/>
                 <input type="password" className="form-control m-2" placeholder="password" required />
                 <button className="btn btn-danger m-2">Register</button>
