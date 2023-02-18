@@ -7,23 +7,18 @@ const Login = () => {
         <MainLayout className="">
             <form className="container w-50">
                 <h3 className="text-danger m-2">Login</h3>
-                <input
-                    type="email"
-                    className="form-control m-2"
-                    placeholder="email@gmail.com"
-                    required
-                />
-                <input
-                    type="password"
-                    className="form-control m-2"
-                    placeholder="secrate password"
-                    required
-                />
+                <label htmlFor="email">Email</label>
+                <input type="email" className="form-control m-2" required />
+                <label htmlFor="password">Password</label>
+                <input type="password" className="form-control m-2" required />
                 <button className="btn btn-danger m-2">Login</button>
                 <hr />
-                <Link to="/register" className="text-danger">
-                    Create a new account.
-                </Link>
+                <p>
+                    Create a new account? 
+                    <Link to="/register" className="text-danger">
+                         Register
+                    </Link>
+                </p>
             </form>
         </MainLayout>
     );
