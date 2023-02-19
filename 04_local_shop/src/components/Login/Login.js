@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/UserContext";
 import MainLayout from "../../layout/MainLayout";
 
 const Login = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user);
     return (
         <MainLayout className="">
             <form className="container w-50">
@@ -14,9 +17,9 @@ const Login = () => {
                 <button className="btn btn-danger m-2">Login</button>
                 <hr />
                 <p>
-                    Create a new account? 
+                    Create a new account?
                     <Link to="/register" className="text-danger">
-                         Register
+                        Register
                     </Link>
                 </p>
             </form>

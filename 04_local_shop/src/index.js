@@ -10,6 +10,7 @@ import Orders from "./Pages/Orders";
 import { ProCartLoader } from "./loaders/ProCartLoader";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import UserContext from "./contexts/UserContext";
 
 const router = createBrowserRouter([
     {
@@ -39,7 +40,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <UserContext>
+            <RouterProvider router={router} />
+        </UserContext>
     </React.StrictMode>
 );
 
