@@ -17,6 +17,7 @@ const UserContext = ({ children }) => {
     const createUser = (email, pass) => {
         return createUserWithEmailAndPassword(auth, email, pass);
     };
+    
     //login user
     const loginUser = (email, pass) => {
         return signInWithEmailAndPassword(auth, email, pass);
