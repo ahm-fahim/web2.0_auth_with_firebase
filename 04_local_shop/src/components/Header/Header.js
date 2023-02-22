@@ -3,6 +3,9 @@ import "./Header.css";
 import logo from "../../images/pngwing.com.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/UserContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import UserProfile from "../UserProfile/UserProfile";
 
 const Header = () => {
     const { user } = useContext(AuthContext);
@@ -53,8 +56,18 @@ const Header = () => {
                                     Login
                                 </Link>
                             </li>
-                            <p className="text-danger">{ user?.email}</p>
                         </ul>
+                        <div class="dropdown">
+                            <FontAwesomeIcon
+                                icon={faUser}
+                                className="dropdown-toggle text-white"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            />
+                            <div className="dropdown-menu dropdown-menu-dark bg-dark">
+                                <UserProfile user={user}></UserProfile>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </nav>
