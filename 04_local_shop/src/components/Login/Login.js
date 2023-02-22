@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/UserContext";
 import MainLayout from "../../layout/MainLayout";
 
 const Login = () => {
-    const { loginUser} = useContext(AuthContext);
+    const { loginUser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -16,6 +17,7 @@ const Login = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 form.reset();
+                navigate("/shop");
             })
             .catch((error) => {
                 console.log(error);

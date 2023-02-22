@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const UserProfile = ({user}) => {
+const UserProfile = ({ user, logoutUser }) => {
     return (
         <div>
             <p>{user?.email}</p>
             <hr />
-            <p>Logout</p>
+            <p onClick={logoutUser}>Logout</p>
         </div>
     );
 };

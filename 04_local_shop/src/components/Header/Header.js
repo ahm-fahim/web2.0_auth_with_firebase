@@ -8,7 +8,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import UserProfile from "../UserProfile/UserProfile";
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logoutUser } = useContext(AuthContext);
     return (
         <div>
             <div className="d-flex justify-content-center mt-5">
@@ -51,23 +51,44 @@ const Header = () => {
                             <li className="nav-item">
                                 <span className="nav-link">Inventory</span>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/login" className="nav-link">
-                                    Login
-                                </Link>
-                            </li>
+                            {user?.uid ? (
+                                ""
+                            ) : (
+                                <>
+                                    <li className="nav-item">
+                                        <Link to="/login" className="nav-link">
+                                            Login
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link
+                                            to="/register"
+                                            className="nav-link"
+                                        >
+                                            Register
+                                        </Link>
+                                    </li>
+                                </>
+                            )}
                         </ul>
-                        <div class="dropdown">
-                            <FontAwesomeIcon
-                                icon={faUser}
-                                className="dropdown-toggle text-white"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            />
-                            <div className="dropdown-menu dropdown-menu-dark bg-dark">
-                                <UserProfile user={user}></UserProfile>
+                        {user?.uid ? (
+                            <div class="dropdown">
+                                <FontAwesomeIcon
+                                    icon={faUser}
+                                    className="dropdown-toggle text-white"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                />
+                                <div className="dropdown-menu dropdown-menu-dark bg-dark">
+                                    <UserProfile
+                                        user={user}
+                                        logoutUser={logoutUser}
+                                    ></UserProfile>
+                                </div>
                             </div>
-                        </div>
+                        ) : (
+                            ""
+                        )}
                     </div>
                 </div>
             </nav>
