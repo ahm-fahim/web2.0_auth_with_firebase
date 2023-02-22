@@ -27,7 +27,7 @@ const Register = () => {
                 form.reset();
             })
             .catch((error) => {
-                console.log(error);
+                setError(error);
             });
     };
     return (

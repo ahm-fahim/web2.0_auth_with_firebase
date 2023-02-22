@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Header.css";
 import logo from "../../images/pngwing.com.png";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/UserContext";
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
     return (
         <div>
             <div className="d-flex justify-content-center mt-5">
@@ -47,8 +49,11 @@ const Header = () => {
                                 <span className="nav-link">Inventory</span>
                             </li>
                             <li className="nav-item">
-                                <Link to="/login" className="nav-link">Login</Link>
+                                <Link to="/login" className="nav-link">
+                                    Login
+                                </Link>
                             </li>
+                            <p className="text-danger">{ user?.email}</p>
                         </ul>
                     </div>
                 </div>

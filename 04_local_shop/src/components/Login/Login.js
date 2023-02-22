@@ -4,7 +4,7 @@ import { AuthContext } from "../../contexts/UserContext";
 import MainLayout from "../../layout/MainLayout";
 
 const Login = () => {
-    const { loginUser, setUser } = useContext(AuthContext);
+    const { loginUser} = useContext(AuthContext);
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -16,8 +16,6 @@ const Login = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 form.reset();
-                setUser(user);
-                console.log(user);
             })
             .catch((error) => {
                 console.log(error);
