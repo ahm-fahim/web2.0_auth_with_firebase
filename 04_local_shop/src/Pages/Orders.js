@@ -9,7 +9,7 @@ const Orders = () => {
         <MainLayout>
             <div className="container">
                 <Cart cart={innitailCart}></Cart>
-                <Link to="/shop" className='btn btn-warning mb-5'>Shop Again!</Link>
+                <Link to="/" className='btn btn-warning mb-5'>Purchase</Link>
             </div>
         </MainLayout>
     );

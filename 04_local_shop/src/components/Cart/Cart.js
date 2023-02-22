@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import CartItem from "../CartItem/CartItem";
 import RandomSelect from "../RandomSelect/RandomSelect";
 import "./Cart.css";
+import { Link } from "react-router-dom";
 
 const Cart = ({ cart, handleDeleteCart, handleClearCart }) => {
     const [randomItem, setRandomItem] = useState([]);
@@ -22,7 +23,6 @@ const Cart = ({ cart, handleDeleteCart, handleClearCart }) => {
     const chooseRandom = (arr) => {
         const index = Math.floor(Math.random() * arr.length);
         const item = cart[index];
-        console.log(item);
         setRandomItem(item);
     };
 
@@ -30,6 +30,7 @@ const Cart = ({ cart, handleDeleteCart, handleClearCart }) => {
         <div className="text-secondary">
             <div className="cartItems">
                 <RandomSelect randomItem={randomItem}></RandomSelect>
+
                 {cart.map((items) => (
                     <CartItem
                         key={items.id}
@@ -82,6 +83,9 @@ const Cart = ({ cart, handleDeleteCart, handleClearCart }) => {
                 </span>
                 $
             </p>
+            <Link to="/orders" className="btn btn-success mb-2">
+                Review Order
+            </Link>
         </div>
     );
 };
