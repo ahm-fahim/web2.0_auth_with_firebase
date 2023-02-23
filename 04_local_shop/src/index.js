@@ -11,6 +11,8 @@ import { ProCartLoader } from "./loaders/ProCartLoader";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import UserContext from "./contexts/UserContext";
+import PrivateRoutes from "./routes/PrivateRoutes";
+import Shipping from "./Pages/Shipping";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
     {
         path: "/register",
         element: <Register />,
+    },
+    {
+        path: "/shipping",
+        element: (
+            <PrivateRoutes>
+                <Shipping />
+            </PrivateRoutes>
+        ),
     },
 ]);
 

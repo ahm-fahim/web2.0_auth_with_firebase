@@ -14,19 +14,23 @@ export const AuthContext = createContext();
 
 const UserContext = ({ children }) => {
     const [user, setUser] = useState(null);
-    
+    const [loading, setloading] = useState(true);
+
     //create user
     const createUser = (email, pass) => {
+        setloading(true);
         return createUserWithEmailAndPassword(auth, email, pass);
     };
 
     //login user
     const loginUser = (email, pass) => {
+        setloading(true);
         return signInWithEmailAndPassword(auth, email, pass);
     };
 
     //logout user
     const logoutUser = () => {
+        setloading(true);
         signOut(auth);
     };
 
@@ -35,11 +39,12 @@ const UserContext = ({ children }) => {
         const unsubscire = onAuthStateChanged(auth, (currentUser) => {
             console.log(currentUser);
             setUser(currentUser);
+            setloading(false);
         });
         return () => unsubscire();
     }, []);
 
-    const authInfo = { logoutUser, loginUser, createUser, user };
+    const authInfo = { loading, logoutUser, loginUser, createUser, user };
     return (
         <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
     );
