@@ -44,3 +44,5 @@ npm install -g electron
 ### Run this command
 
 `` alias firebase="`npm config get prefix`/bin/firebase" ``
+
+
